@@ -1,0 +1,137 @@
+* {
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+body {
+    text-align: center;
+	background-color: black;
+}
+
+hr {
+	border: 1px solid dimgray;
+	width: 95%;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.game-container{
+	height: 85%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.tile-container {
+    width: 350px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.tile-container div {
+	display: flex;
+}
+
+
+.tile {
+    /* Box */
+    border: 2px solid dimgray;
+    width: 60px;
+    height: 60px;
+    margin: 2px;
+
+    /* Text */
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.green-overlay {
+    background-color: #538d4e !important;
+    border:2px solid #538d4e !important;
+}
+
+.yellow-overlay {
+    background-color: #b59f3a !important;
+    border:2px solid #b59f3a !important;
+}
+
+.gray-overlay {
+    background-color: gray !important;
+	border: 2px solid gray;
+}
+
+.wordlist-container {
+	width: 95%;
+	min-width: 450px;
+	min-height: 28px;
+	height: 70%;
+	margin: 0 auto;
+	border: 1px solid dimgray;
+}
+
+.tablelist-container{
+	width: 100%;
+	text-align: center;
+	height: 26;
+}
+td{
+	min-width: 58;
+	height: 25;
+}
+
+.cell{
+	border: 1px solid dimgray;
+}
+/* .keyboard-container{
+	position: absolute;
+	bottom: 0px;
+} */
+.keyboard-row {
+    width: 510px;
+    display: flex;
+    flex-wrap: wrap;
+	justify-content: center;
+    align-items: center;
+	margin: 0 auto;
+}
+
+.key-tile {
+      width: 43px;
+    height: 58px;
+    border-radius: 4px;
+    border: none;
+    background-color: gray;
+    margin: 4px;
+	align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.widekey-tile {
+      width: 68px;
+}
+
+.tile.flip {
+    animation: 0.5s linear flipping;
+}
+
+@keyframes flipping {
+    0% {
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
