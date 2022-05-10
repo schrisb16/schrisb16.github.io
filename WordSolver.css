@@ -3,9 +3,13 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
 }
+html{
+	height: 100%;
+}
 body {
     text-align: center;
 	background-color: black;
+	height: 100%;
 }
 
 hr {
@@ -29,7 +33,7 @@ hr {
 
 .tile-container {
     width: 350px;
-    margin: 0 auto;
+    margin: 0px auto;
     display: flex;
     flex-wrap: wrap;
 }
@@ -73,18 +77,18 @@ hr {
 	min-width: 450px;
 	min-height: 28px;
 	height: 70%;
-	margin: 0 auto;
+	margin: 0px auto;
 	border: 1px solid dimgray;
 }
 
 .tablelist-container{
 	width: 100%;
 	text-align: center;
-	height: 26;
+	height: 26px;
 }
 td{
-	min-width: 58;
-	height: 25;
+	min-width: 58px;
+	height: 23px;
 }
 
 .cell{

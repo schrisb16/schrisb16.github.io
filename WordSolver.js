@@ -92,7 +92,7 @@ function reportWindowResize() {
 	var tileHeight = tileDisplay.clientHeight;
 	var keyboardHeight = keyboard.clientHeight;
 	var gameHeight = gameBoard.clientHeight;
-	//wordListDisplay.style.height = '202';
+
 	
 	var w = getInnerWidth(wordListDisplay);
 	var c = Math.floor(w / 70);	
@@ -100,7 +100,7 @@ function reportWindowResize() {
 	var h = getInnerHeight(wordListDisplay)-1;
 	var r = Math.floor(h / 27);
 
-	
+	console.log('size:' + h + ' : ' + r)
 
 	updateTable(r,c);
 	//min 60W,25H
