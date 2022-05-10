@@ -94,14 +94,14 @@ td{
 .cell{
 	border: 1px solid dimgray;
 }
-/* .keyboard-container{
-	position: absolute;
-	bottom: 0px;
-} */
+
+.keyboard-container{
+	max-width: 510px;
+}
+
 .keyboard-row {
-    width: 510px;
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
 	justify-content: center;
     align-items: center;
 	margin: 0 auto;

@@ -72,7 +72,7 @@ function intialize() {
 	window.addEventListener('resize', reportWindowResize);
 	
 	tableList.addEventListener('dblclick', (e) => handleTableClick(cell = e.target.closest('td')));
-	
+
 }
 
 //Processes Keys pressed on Keyboard
@@ -92,8 +92,13 @@ function reportWindowResize() {
 	var tileHeight = tileDisplay.clientHeight;
 	var keyboardHeight = keyboard.clientHeight;
 	var gameHeight = gameBoard.clientHeight;
-
-	
+	var gameWidth = getInnerWidth(gameBoard);
+	console.log('Game Width: ' + gameWidth)
+	if(gameWidth < 500){
+		keyboard.style.display = "none"
+	}else {
+		keyboard.style.display = "block"
+	}
 	var w = getInnerWidth(wordListDisplay);
 	var c = Math.floor(w / 70);	
 	
@@ -209,15 +214,20 @@ function updateWordList(){
 				})				
 			} else if (color === 'yellow'){
 				tempWordList.forEach((word, index) => {
-					let charInWord = false;
-					for(let charInd = 0; charInd < tileColumns; charInd ++){
-						if (word.charAt(charInd) == letter){
-						charInWord = true;						
+					if (word.charAt(c) == letter){
+						
+						delete tempWordList[index]
+						
+					} else {
+						let charInWord = false;
+						for(let charIndex = 0; charIndex < word.length; charIndex ++){
+							if (word.charAt(charIndex) == letter){
+							charInWord = true;						
+							}
 						}
+					
+						if (!charInWord){delete tempWordList[index]}
 					}
-					
-					if (!charInWord){delete tempWordList[index]}
-					
 				})
 			} else if (color ==='gray'){
 				tempWordList.forEach((word, index) => {
@@ -242,6 +252,9 @@ function updateWordList(){
 
 //Handles Enter Press
 function checkRow() {
+	if (currentTile < tileColumns){
+		return
+	}
     const guess = guessRow.join('')
 
     console.log(guess);
@@ -281,6 +294,7 @@ const flipTile= () => {
 const addColorToKey = (keyLetter, color) => {
     const key = document.getElementById(keyLetter)
     key.classList.add(color)
+	console.log('key: ' + keyLetter + 'color: ' + color)
 }
 
 function handleFlip(guessRowIndex, guessIndex){
@@ -322,6 +336,7 @@ function handleTableClick(cell){
 	const row = cell.parentElement;
 	let cellText = cell.innerHTML;
 	console.log(cellText, row.rowIndex, cell.cellIndex);
+	currentTile = 0;
 	for(var i = 0; i < cellText.length; i++){
 		handleClick(cellText.charAt(i));
 	}
