@@ -96,19 +96,21 @@ function reportWindowResize() {
 	var keyboardHeight = keyboard.clientHeight;
 	var gameHeight = gameBoard.clientHeight;
 	var gameWidth = getInnerWidth(gameBoard);
-	console.log('Game Width: ' + gameWidth)
+	//console.log('Game Width: ' + gameWidth)
+	/* 	
 	if(gameWidth < 480){
 		keyboard.style.display = "none"
 	}else {
 		keyboard.style.display = "block"
 	}
+	*/
 	var w = getInnerWidth(wordListDisplay);
 	var c = Math.floor(w / 70);	
 	
 	var h = getInnerHeight(wordListDisplay)-1;
 	var r = Math.floor(h / 27);
 
-	console.log('size:' + h + ' : ' + r)
+	//console.log('size Pixels:' + h + ' Rows: ' + r)
 
 	updateTable(r,c);
 	//min 60W,25H

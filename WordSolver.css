@@ -33,7 +33,7 @@ hr {
 }
 
 .tile-container {
-    width: 350px;
+    width: 340px;
     margin: 0px auto;
     display: flex;
     flex-wrap: wrap;
@@ -75,7 +75,7 @@ hr {
 
 .wordlist-container {
 	width: 95%;
-	min-width: 450px;
+	min-width: 340px;
 	min-height: 28px;
 	height: 70%;
 	margin: 0px auto;
@@ -97,6 +97,8 @@ td{
 }
 
 .keyboard-container{
+	width: 97%;
+	min-width: 340px;
 	max-width: 500px;
 }
 
